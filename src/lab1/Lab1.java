@@ -6,9 +6,12 @@
 package lab1;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -16,9 +19,9 @@ import java.io.IOException;
  */
 public class Lab1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        File file = new File("C:" + File.separatorChar + "temp" + File.separatorChar + "lab1" + File.separatorChar
+        File file = new File("C:" + File.separatorChar + "temp" + File.separatorChar
                 + "lab1.txt");
 
         BufferedReader in = null;
@@ -54,5 +57,14 @@ public class Lab1 {
 
             }
         }
+        
+        PrintWriter out = new PrintWriter(new BufferedWriter(
+						new FileWriter(file, true)));
+        
+        out.println("");
+        out.println("Steven Schoenauer");
+        out.println("W164N8210 Lavergne Ave");
+        out.println("Menomonee Falls, WI 53051");
+        out.close();
     }
 }
